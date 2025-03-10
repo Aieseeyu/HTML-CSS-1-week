@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Barre de navigation */
+header > nav {
+  height: 20vh;
+  width: 100%;
+  padding: 0;
+}
+
+header > nav > ul {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+}
+
+header > nav > ul > li {
+  background-color: #ffe48a;
+  padding: 13px;
+}
+
+header > nav > ul > li > a {
+}
