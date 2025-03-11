@@ -1,25 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Barre de navigation */
+/*--------------------------------------------- Barre de navigation --------------------------------------------------- */
 header > nav {
-  height: 20vh;
+  height: 55px;
   width: 100%;
   padding: 0;
+  background-color: #f8df8c;
+}
+
+.parentLogoNav {
+  width: 100px;
+  height: 100%;
+  float: left;
+}
+
+.logoNav {
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.logoNav:hover {
+  width: 110%;
 }
 
 header > nav > ul {
   list-style-type: none;
-  display: flex;
-  width: 100%;
+  float: right;
+  height: 55px;
 }
 
 header > nav > ul > li {
-  background-color: #ffe48a;
-  padding: 13px;
+  display: inline-block;
+  border-right: 1px solid;
 }
 
 header > nav > ul > li > a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  height: 55px;
+  line-height: 55px;
+  margin-inline: 10px;
+  transition: 0.2s;
+}
+
+header > nav > ul > li > a:hover {
+  font-size: larger;
+}
+
+/*---------------------------------------- Première section ---------------------------------------- */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+main {
+}
+
+.sectionOne {
+  /* margin-top: 70px; */
+  margin-inline: 300px;
+  padding-block: 100px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  display: block;
+}
+
+.textDesc {
+  margin-block: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 150%;
+  float: left;
+  width: 40%;
+  margin-left: 150px;
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.introImg {
+  float: right;
+  width: 30%;
+  height: auto;
+  border-radius: 15px;
+  animation: slideInFromRight 1s ease-out;
+  margin-right: 150px;
+  transition: 0.3s;
+}
+
+.introImg:hover {
+  transform: rotate(3deg);
+}
+
+/* ------------------------------------------ Deuxieme Section ------------------------------------------- */
+
+.sectionTwo {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.textSecTwo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 150%;
+  width: 50%;
+  float: right;
+  background-color: #f8df8c;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  padding-inline: 120px;
+  padding-block: 50px;
+  margin-left: 100px;
+  line-height: 35px;
+  transition: 0.3s;
+}
+
+.textSecTwo:hover {
+  padding-block: 65px;
+}
+
+/* ---------------------------------------- Footer -------------------------------- */
+
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #1d285e;
+}
+
+.footerLinks {
+  list-style-type: none;
+  float: left;
+  padding-left: 30%;
+  padding-top: 50px;
+  line-height: 35px;
+}
+
+.footerLinks > li > a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerLinks > li > a:hover {
+  color: #f8df8c;
+}
+
+.footerSocials {
+  list-style-type: none;
+  float: right;
+  padding-right: 30%;
+  padding-top: 50px;
+  line-height: 35px;
+}
+
+.footerSocials > li > a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerSocials > li > a:hover {
+  color: #f8df8c;
+}
+
+.asa {
+  width: 100%;
+  height: 70%;
+}
+
+.footerRights {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.decoLine {
+  background-color: white;
+  height: 1px;
+  width: 600px;
+  margin-left: 35%;
+  margin-bottom: 30px;
+}
+
+.footerTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  color: white;
 }

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*--------------------------------------------- Barre de navigation --------------------------------------------------- */
+header > nav {
+  height: 55px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8df8c;
+}
+
+.parentLogoNav {
+  padding: 13px;
+  width: 100px;
+  height: auto;
+  float: left;
+}
+
+.logoNav {
+  height: auto;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.logoNav:hover {
+  width: 110%;
+}
+
+header > nav > ul {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+}
+
+header > nav > ul > li {
+  border-right: solid 1px;
+}
+
+header > nav > ul > li > a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: 0.2s;
+}
+
+header > nav > ul > li > a:hover {
+  font-size: larger;
+}
+
+/*---------------------------------------- Premiere section ---------------------------------------- */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+main {
+  display: grid;
+  grid-template-rows: 700px 500px;
+}
+
+.sectionOne {
+  margin-top: 70px;
+  margin-inline: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleDesc {
+}
+
+.textDesc {
+  width: 50%;
+}
+
+.introImg {
+  height: auto;
+  width: 40%;
+  border-radius: 15px;
+  animation: 0.7s ease-out 0s 1 slideInFromRight;
+}
