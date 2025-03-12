@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 }
 
+/* -------------------------------------------- Page index ------------------------------------------------------- */
+
 /*--------------------------------------------- Barre de navigation --------------------------------------------------- */
 header > nav {
   height: 55px;
   width: 100%;
   padding: 0;
-  background-color: #f8df8c;
+  background-color: #fbd562;
 }
 
 .parentLogoNav {
@@ -41,21 +44,24 @@ header > nav > ul {
 header > nav > ul > li {
   display: inline-block;
   border-right: 1px solid;
+  border-color: #1d285e;
 }
 
 header > nav > ul > li > a {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   text-decoration: none;
-  color: black;
-  height: 55px;
+  color: #1d285e;
+  /* height: 55px; */
   line-height: 55px;
-  margin-inline: 10px;
+  padding-inline: 10px;
+  padding-block: 20px;
   transition: 0.2s;
 }
 
 header > nav > ul > li > a:hover {
   font-size: larger;
+  color: #fdfeff;
 }
 
 /*---------------------------------------- Première section ---------------------------------------- */
@@ -79,9 +85,6 @@ header > nav > ul > li > a:hover {
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-main {
 }
 
 .sectionOne {
@@ -129,7 +132,7 @@ main {
   font-size: 150%;
   width: 50%;
   float: right;
-  background-color: #f8df8c;
+  background-color: #fbd562;
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
   padding-inline: 120px;
@@ -213,4 +216,193 @@ footer {
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   color: white;
+}
+
+/* --------------------------------------------------------- Second page --------------------------------------------------------- */
+
+/* --------------------------------------------------------- Section one --------------------------------------------------------- */
+
+.sectionSecPageOne {
+  background-image: url(../img/backgroundSecond.jpg);
+  background-size: cover;
+  background-position: 0;
+  /* height: fit-content; */
+}
+
+.gradient {
+  height: 100%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9360119047619048) 100%,
+    rgba(251, 213, 98, 1) 100%,
+    rgba(255, 255, 255, 0.04805672268907568) 100%
+  );
+}
+
+.titleSecPage {
+  height: auto;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.titleSecPage > p {
+  /* width: fit-content; */
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  color: #1d285e;
+}
+
+.titleSecPage > p:hover {
+  color: #243382;
+  transition: 0.5s;
+}
+
+.sectSecDesc {
+  margin: auto;
+  width: 50%;
+  font-family: "Montserrat";
+  font-size: larger;
+  padding-block: 100px;
+  text-align: center;
+}
+
+.sectionSecPageTwo {
+  height: fit-content;
+  width: 100%;
+  margin-inline: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0px -17px 15px -24px #000000;
+  background-color: #fbd562;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 213, 98, 1) 0%,
+    rgba(251, 213, 98, 1) 38%,
+    rgba(255, 255, 255, 0.37298669467787116) 91%,
+    rgba(255, 255, 255, 0.04805672268907568) 100%
+  );
+  /* border-radius: 20px; */
+  /* padding-block: 20px; */
+  /* margin-block: 100px; */
+  /* transition: 1s; */
+}
+
+.sectionSecPageTwo > h3 {
+  font-size: 30px;
+  font-family: "Montserrat", serif;
+  font-style: italic;
+  font-weight: 800;
+  /* font-style: italic; */
+  text-align: center;
+  color: #1d285e;
+  padding: 20px;
+}
+
+/* -----partie partenaires ------ */
+.containerPartner {
+  height: 300px;
+  width: 100%;
+  padding-bottom: 40px;
+  margin-left: auto;
+}
+
+.partner {
+  height: 150px;
+  width: 200px;
+  filter: grayscale(100%);
+  /* background-color: rgb(236, 0, 0); */
+  display: inline-block;
+  margin: 30px;
+}
+
+.partner1 {
+  background-image: url(../img/partnerRegions.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 150px;
+}
+.partner2 {
+  background-image: url(../img/patnerStef.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.partner3 {
+  background-image: url(../img/partnerAaccor.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.partner4 {
+  background-image: url(../img/partnerTotal.png);
+  background-size: 85%;
+  background-repeat: no-repeat;
+}
+.partner5 {
+  background-image: url(../img/partnerAirfrance.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.partner6 {
+  background-image: url(../img/partnerLambo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.partner1:hover {
+  filter: none;
+  transition: 0.5s;
+}
+.partner2:hover {
+  filter: none;
+  transition: 0.5s;
+}
+.partner3:hover {
+  filter: none;
+  transition: 0.5s;
+}
+.partner4:hover {
+  filter: none;
+  transition: 0.5s;
+}
+.partner5:hover {
+  filter: none;
+  transition: 0.5s;
+}
+.partner6:hover {
+  filter: none;
+  transition: 0.5s;
+}
+
+/* ------------------------------------------------------ Section deux ------------------------------------- */
+
+.sectionSecPageThree {
+  margin-block: 60px;
+  height: 700px;
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 20px;
+  margin-block: 100px;
+}
+
+.para1 {
+  width: 40%;
+  font-family: "Montserrat";
+  font-size: 22px;
+  display: inline-block;
+}
+
+.para2 {
+  width: 100%;
+  font-family: "Montserrat";
+  font-size: 22px;
+  display: inline-block;
+}
+
+.sectionSecPageThree > img {
+  width: auto;
+  height: 550px;
+  border-radius: 20px;
 }
