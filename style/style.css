@@ -1,6 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat:wght@100..900&family=Bagel+Fat+One&family=Playfair+Display:wght@400..900&display=swap");
+
+:root {
+  --primary-blue: #1d285e;
+  --primary-yellow: #fbd562;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -14,7 +21,7 @@ header > nav {
   height: 55px;
   width: 100%;
   padding: 0;
-  background-color: #fbd562;
+  background-color: var(--primary-yellow);
 }
 
 .parentLogoNav {
@@ -44,14 +51,14 @@ header > nav > ul {
 header > nav > ul > li {
   display: inline-block;
   border-right: 1px solid;
-  border-color: #1d285e;
+  border-color: var(--primary-blue);
 }
 
 header > nav > ul > li > a {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   text-decoration: none;
-  color: #1d285e;
+  color: var(--primary-blue);
   /* height: 55px; */
   line-height: 55px;
   padding-inline: 10px;
@@ -90,9 +97,30 @@ header > nav > ul > li > a:hover {
 .sectionOne {
   /* margin-top: 70px; */
   margin-inline: 300px;
-  padding-block: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
   overflow: hidden;
   display: block;
+}
+
+.titleFirstPage {
+  height: auto;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.titleFirstPage > p {
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  color: var(--primary-blue);
+}
+
+.titleFirstPage > p:hover {
+  color: #243382;
+  transition: 0.5s;
 }
 
 .textDesc {
@@ -132,7 +160,7 @@ header > nav > ul > li > a:hover {
   font-size: 150%;
   width: 50%;
   float: right;
-  background-color: #fbd562;
+  background-color: var(--primary-yellow);
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
   padding-inline: 120px;
@@ -151,7 +179,7 @@ header > nav > ul > li > a:hover {
 footer {
   width: 100%;
   height: 300px;
-  background-color: #1d285e;
+  background-color: var(--primary-blue);
 }
 
 .footerLinks {
@@ -231,7 +259,7 @@ footer {
 
 .gradient {
   height: 100%;
-  background: rgb(255, 255, 255);
+  /* background: rgb(255, 255, 255); */
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.9360119047619048) 100%,
@@ -253,7 +281,7 @@ footer {
   font-weight: bolder;
   font-style: italic;
   text-align: center;
-  color: #1d285e;
+  color: var(--primary-blue);
 }
 
 .titleSecPage > p:hover {
@@ -277,7 +305,7 @@ footer {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   box-shadow: 0px -17px 15px -24px #000000;
-  background-color: #fbd562;
+  background-color: var(--primary-yellow);
   background: linear-gradient(
     180deg,
     rgba(251, 213, 98, 1) 0%,
@@ -298,8 +326,36 @@ footer {
   font-weight: 800;
   /* font-style: italic; */
   text-align: center;
-  color: #1d285e;
+  color: var(--primary-blue);
   padding: 20px;
+}
+
+@keyframes bounceArrow {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-30px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-15px) rotate(45deg);
+  }
+}
+
+.sectSecArrow {
+  position: relative;
+  left: 49%;
+  margin-bottom: 100px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 25px;
+  transform: rotate(45deg);
+  animation: bounceArrow 2s infinite;
 }
 
 /* -----partie partenaires ------ */
@@ -314,7 +370,6 @@ footer {
   height: 150px;
   width: 200px;
   filter: grayscale(100%);
-  /* background-color: rgb(236, 0, 0); */
   display: inline-block;
   margin: 30px;
 }
@@ -351,27 +406,7 @@ footer {
   background-repeat: no-repeat;
 }
 
-.partner1:hover {
-  filter: none;
-  transition: 0.5s;
-}
-.partner2:hover {
-  filter: none;
-  transition: 0.5s;
-}
-.partner3:hover {
-  filter: none;
-  transition: 0.5s;
-}
-.partner4:hover {
-  filter: none;
-  transition: 0.5s;
-}
-.partner5:hover {
-  filter: none;
-  transition: 0.5s;
-}
-.partner6:hover {
+.partner:hover {
   filter: none;
   transition: 0.5s;
 }
@@ -384,11 +419,12 @@ footer {
   width: 80%;
   margin-inline: auto;
   border-radius: 20px;
-  margin-block: 100px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 .para1 {
-  width: 40%;
+  width: 45%;
   font-family: "Montserrat";
   font-size: 22px;
   display: inline-block;
@@ -405,4 +441,242 @@ footer {
   width: auto;
   height: 550px;
   border-radius: 20px;
+  margin: 30px;
+  box-shadow: 8px 8px 18px -4px rgba(251, 213, 98, 0.75);
+}
+
+/* ------------------------------------------------------ Third page -------------------------------------------------- */
+
+/* ------------------------------------------------------ Section One ------------------------------------------------- */
+
+@keyframes slideInFromLeftCard {
+  0% {
+    transform: translateX(-1000%);
+    /* opacity: 0; */
+  }
+  100% {
+    transform: translateX(0);
+    /* opacity: 1; */
+  }
+}
+
+.mainThird {
+  width: 100%;
+  height: 1000px;
+  background: rgb(49, 67, 155);
+  background: linear-gradient(
+    180deg,
+    rgba(49, 67, 155, 1) 0%,
+    rgba(94, 109, 184, 1) 54%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.titleThirdPage {
+  height: auto;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.titleThirdPage > p {
+  /* width: fit-content; */
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  color: #ffffff;
+}
+
+.titleThirdPage > p:hover {
+  color: #fff8e6;
+  transition: 0.5s;
+}
+
+.cards {
+  list-style: none;
+  margin-top: 80px;
+}
+
+.cardUl {
+  text-align: center;
+  margin-inline: auto;
+  height: 500px;
+  width: 100%;
+}
+
+.cardLi {
+  height: 550px;
+  width: 360px;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-inline: 50px;
+  box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.75);
+  transition: 0.3s;
+}
+
+.cardLi:hover {
+  transform: rotate(3deg);
+}
+
+.card1 {
+  animation: slideInFromLeftCard 1.3s ease-out;
+}
+
+.card2 {
+  animation: slideInFromLeftCard 1.8s ease-out;
+}
+
+.card3 {
+  animation: slideInFromLeftCard 2.8s ease-out;
+}
+
+.card4 {
+  animation: slideInFromLeftCard 3.8s ease-out;
+}
+
+.cardLi > h4 {
+  padding-block: 30px;
+  font-family: "Montserrat", serif;
+  font-size: larger;
+}
+
+.cardLi > img {
+  width: 50px;
+  height: 50px;
+}
+
+.cardLi > p {
+  font-family: "Montserrat";
+  font-size: large;
+  text-align: left;
+  margin-inline: 30px;
+  overflow: hidden;
+  height: 300px;
+  margin-block: 30px;
+}
+
+/* -------------------------------------------------------------------------- Fifth page ------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- Section One ------------------------------------------------------------------ */
+
+.sectionFifthPageOne {
+  width: 100%;
+  height: 1000px;
+  background-image: url(../img/contactImg.jpg);
+  background-size: contain;
+  background-position-x: 150%;
+}
+
+.fifthGradient {
+  width: 100%;
+  height: 1000px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 48%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.formContact {
+  width: 700px;
+  height: 80%;
+  background: white;
+  /* box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.75); */
+  border-radius: 20px;
+  margin: 50px;
+  margin-top: 100px;
+  /* margin-block: auto; */
+  float: left;
+  text-align: center;
+}
+
+.formContact > h4 {
+  font-family: "Montserrat";
+  font-style: italic;
+  color: var(--primary-blue);
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-size: xx-large;
+}
+
+.formContact label {
+  font-family: "Montserrat";
+  font-size: medium;
+  font-weight: 600;
+  width: 100%;
+  float: left;
+}
+
+.inputText {
+  border: 1px solid var(--primary-blue);
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+  margin: 20px;
+  padding-left: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.textArea {
+  border: 1px solid var(--primary-blue);
+  border-radius: 5px;
+  height: 200px;
+  width: 650px;
+  margin: 20px;
+  padding-left: 5px;
+  padding-top: 5px;
+  resize: none;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.firstContact {
+  margin-block: 30px;
+}
+
+.secondContact {
+  margin-block: 30px;
+}
+
+.inputText:focus,
+.textArea:focus {
+  border: 1px solid var(--primary-yellow);
+  outline: none;
+  outline: none;
+}
+
+.buttonDiv {
+  width: 100%;
+  height: fit-content;
+  margin-block: 30px;
+}
+
+.buttonForm {
+  width: 300px;
+  height: 60px;
+  background: rgb(39, 52, 116);
+  background: linear-gradient(
+    90deg,
+    rgba(39, 52, 116, 1) 0%,
+    rgba(76, 92, 177, 1) 49%,
+    rgba(95, 113, 208, 1) 100%
+  );
+  color: white;
+  border-radius: 10px;
+  border: 0;
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonForm:hover {
+  width: 310px;
+  height: 65px;
 }
