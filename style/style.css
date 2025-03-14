@@ -107,9 +107,6 @@ header > nav > ul > li > a:hover {
   height: auto;
   width: 100%;
   margin-bottom: 70px;
-}
-
-.titleFirstPage > p {
   font-size: 50px;
   font-family: "Playfair Display", serif;
   font-weight: bolder;
@@ -272,10 +269,6 @@ footer {
   height: auto;
   width: 100%;
   padding-top: 60px;
-}
-
-.titleSecPage > p {
-  /* width: fit-content; */
   font-size: 50px;
   font-family: "Playfair Display", serif;
   font-weight: bolder;
@@ -313,10 +306,6 @@ footer {
     rgba(255, 255, 255, 0.37298669467787116) 91%,
     rgba(255, 255, 255, 0.04805672268907568) 100%
   );
-  /* border-radius: 20px; */
-  /* padding-block: 20px; */
-  /* margin-block: 100px; */
-  /* transition: 1s; */
 }
 
 .sectionSecPageTwo > h3 {
@@ -324,7 +313,6 @@ footer {
   font-family: "Montserrat", serif;
   font-style: italic;
   font-weight: 800;
-  /* font-style: italic; */
   text-align: center;
   color: var(--primary-blue);
   padding: 20px;
@@ -476,10 +464,6 @@ footer {
   height: auto;
   width: 100%;
   padding-top: 60px;
-}
-
-.titleThirdPage > p {
-  /* width: fit-content; */
   font-size: 50px;
   font-family: "Playfair Display", serif;
   font-weight: bolder;
@@ -585,11 +569,9 @@ footer {
   width: 700px;
   height: 80%;
   background: white;
-  /* box-shadow: 10px 10px 17px -8px rgba(0, 0, 0, 0.75); */
   border-radius: 20px;
   margin: 50px;
   margin-top: 100px;
-  /* margin-block: auto; */
   float: left;
   text-align: center;
 }
