@@ -403,7 +403,7 @@ footer {
 
 .sectionSecPageThree {
   margin-block: 60px;
-  height: 700px;
+  height: fit-content;
   width: 80%;
   margin-inline: auto;
   border-radius: 20px;
@@ -411,26 +411,45 @@ footer {
   margin-bottom: 200px;
 }
 
-.para1 {
-  width: 45%;
-  font-family: "Montserrat";
-  font-size: 22px;
-  display: inline-block;
-}
-
-.para2 {
+.productss {
   width: 100%;
-  font-family: "Montserrat";
-  font-size: 22px;
-  display: inline-block;
+  height: fit-content;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 50px; /* ou ce que tu veux */
 }
 
-.sectionSecPageThree > img {
+.product {
+  height: 350px;
+  width: 300px;
+  cursor: pointer;
+  /* background-color: #f1f1f1; */
+}
+
+/* animation underline */
+.product:hover > .titleProduct {
+  background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
+}
+
+/* titre et animation underline produit  */
+.titleProduct {
+  font-family: "Montserrat";
+  padding-block: 10px;
+  display: inline-block;
+  padding-bottom: 2px;
+  background-image: linear-gradient(#000 0 0);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, background-position 0s 0.3s; /*change after the size immediately*/
+}
+
+.productImg {
   width: auto;
-  height: 550px;
-  border-radius: 20px;
-  margin: 30px;
-  box-shadow: 8px 8px 18px -4px rgba(251, 213, 98, 0.75);
+  height: 300px;
 }
 
 /* ------------------------------------------------------ Third page -------------------------------------------------- */
@@ -556,41 +575,52 @@ footer {
 .fifthGradient {
   width: 100%;
   height: 1000px;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 48%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0.4) 7%,
+    rgba(255, 255, 255, 1) 16%,
+    rgba(255, 255, 255, 1) 85%,
+    rgba(255, 255, 255, 0.43) 93%,
+    rgba(255, 255, 255, 0.22) 100%
   );
 }
 
 .formContact {
-  width: 700px;
+  width: 1000px;
   height: 80%;
   background: white;
   border-radius: 20px;
-  margin: 50px;
-  margin-top: 100px;
-  float: left;
+  /* margin: 50px; */
+  /* margin-top: 100px; */
+  margin-inline: auto;
+  /* float: left; */
   text-align: center;
+  display: flex;
+  flex-direction: column; /* ✅ déjà présent */
+  /* gap: 20px; */
+  align-items: center; /* centre les enfants horizontalement */
+  padding: 40px; /* optionnel mais joli */
+}
+
+.formContact input,
+.formContact select,
+.formContact textarea,
+.formContact button {
+  width: 50%; /* ou 100%, selon ton style */
+  padding: 10px;
+  /* font-size: 16px; */
 }
 
 .formContact > h4 {
   font-family: "Montserrat";
   font-style: italic;
   color: var(--primary-blue);
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  padding-top: 30px;
   margin-bottom: 60px;
   font-size: xx-large;
-}
-
-.formContact label {
-  font-family: "Montserrat";
-  font-size: medium;
-  font-weight: 600;
-  width: 100%;
-  float: left;
 }
 
 .inputText {
@@ -617,12 +647,19 @@ footer {
   font-weight: 600;
 }
 
-.firstContact {
-  margin-block: 30px;
+.selectAdd {
+  border: 1px solid var(--primary-blue);
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+  margin: 20px;
+  padding-left: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
 }
 
-.secondContact {
-  margin-block: 30px;
+.firstContact {
+  margin-block: 10px;
 }
 
 .inputText:focus,
@@ -661,4 +698,78 @@ footer {
 .buttonForm:hover {
   width: 310px;
   height: 65px;
+}
+
+.sectionThanksAdd {
+  height: 600px;
+}
+
+/*--------------------------------------------------- Page 4 modifiers des produits ------------------------------------------------- */
+.sectionFourthPage {
+  height: fit-content;
+  padding-bottom: 100px;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modifyH3 {
+  font-size: 30px;
+  font-family: "Montserrat", serif;
+  font-style: italic;
+  font-weight: 800;
+  text-align: center;
+  color: var(--primary-blue);
+  margin-block: 20px;
+}
+
+.productTable {
+  margin-inline: auto;
+  width: 75%;
+  border-collapse: collapse; /* 🔸 Supprime les doubles bordures */
+  margin: 20px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 🔸 Légère ombre portée */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.productTable thead th {
+  background-color: var(--primary-blue); /* 🔸 Couleur de fond */
+  color: white; /* 🔸 Texte en blanc */
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+.productTable tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee; /* 🔸 Ligne discrète entre les lignes */
+}
+
+.productTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* 🔸 Couleur alternée pour la lisibilité */
+}
+
+.productTable tbody tr:hover {
+  background-color: #eef2ff;
+  transition: background-color 0.1s ease-in-out;
+}
+.buttonModif,
+.buttonDel {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, #4a5fc1, #667eea);
+}
+
+.buttonModif:hover,
+.buttonDel:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #3c4cb0, #5564d8);
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Livret d'accueil</title>
     <link rel="stylesheet" href="../style/style.css" />
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -15,70 +15,64 @@
         /></a>
         <ul class="navbar">
           <li>
-            <a href="second.html">Introduction</a>
+            <a href="second.html">Nos produits</a>
           </li>
           <li>
-            <a href="third.html">Fonctionnalités</a>
+            <a href="third.html">Supprimer un produit</a>
           </li>
           <li>
-            <a href="fourth.html">Langages</a>
+            <a href="fourth.html">Modifier un produit</a>
           </li>
           <li>
-            <a href="fifth.html">Contact</a>
+            <a href="fifth.html">Ajouter un produit</a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main class="mainFifth">
-      <section class="sectionFifthPageOne">
+      <section class="sectionFifthPageOne" id="sectionFifthPageOne">
         <div class="fifthGradient">
-          <form action="exemple.php" method="post" class="formContact">
-            <h4>Formulaire de contact</h4>
+          <form action="" method="" class="formContact" id="formAddProd">
+            <h4>Ajouter un produit</h4>
             <div class="firstContact">
               <input
                 type="text"
-                name="firstName"
-                id="firstName"
+                name="ProductName"
+                id="product_name"
                 class="inputText"
-                placeholder="Prénom"
+                placeholder="Titre du produit"
               />
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                class="inputText"
-                placeholder="Nom"
-              />
-            </div>
-            <div class="secondContact">
-              <input
-                type="text"
-                name="email"
-                id="email"
-                class="inputText"
-                placeholder="Email"
-              />
-              <input
-                type="text"
-                name="zipcode"
-                id="zipcode"
-                class="inputText"
-                placeholder="Code postal"
-              />
-            </div>
+              <select class="selectAdd" name="ProductStatus" id="">
+                <option value="active" hidden>Statut</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
 
-            <textarea
-              class="textArea"
-              name="message"
-              id="message"
-              placeholder="Que voulez vous nous dire?"
-            ></textarea>
-            <div class="buttonDiv">
-              <button class="buttonForm">Soumettre</button>
+              <select
+                class="selectAdd"
+                name="ProductCategoryId"
+                id="selectCategoryProduct"
+              >
+                <option value="" hidden>Catégorie</option>
+              </select>
+
+              <textarea
+                class="textArea"
+                name="ProductDescription"
+                id="message"
+                placeholder="Description du produit..."
+              ></textarea>
+              <div class="buttonDiv"></div>
+
+              <button class="buttonForm" id="buttonAddProd">Ajouter</button>
             </div>
           </form>
         </div>
+      </section>
+
+      <section hidden class="sectionThanksAdd" id="sectionThanksAdd">
+        <h2 class="titleSecPage">Produit ajouté avec succès</h2>
       </section>
     </main>
 
@@ -119,7 +113,7 @@
 
       <div class="decoLine"></div>
 
-      <p class="footerRights">Livret d'accueil. Tous droits réservés.</p>
+      <p class="footerRights">Ecommerce. Tous droits réservés.</p>
     </footer>
   </body>
 </html>

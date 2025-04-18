@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Livret d'accueil</title>
     <link rel="stylesheet" href="../style/style.css" />
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -15,22 +15,82 @@
         /></a>
         <ul class="navbar">
           <li>
-            <a href="second.html">Introduction</a>
+            <a href="second.html">Nos produits</a>
           </li>
           <li>
-            <a href="third.html">Fonctionnalités</a>
+            <a href="third.html">Supprimer un produit</a>
           </li>
           <li>
-            <a href="fourth.html">Langages</a>
+            <a href="fourth.html">Modifier un produit</a>
           </li>
           <li>
-            <a href="fifth.html">Contact</a>
+            <a href="fifth.html">Ajouter un produit</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class=""></main>
+    <main class="">
+      <section class="sectionFourthPage" id="showModifProd">
+        <h3 class="modifyH3">Modifier des produits</h4>
+       
+          <table class="productTable" id="productTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Statut</th>
+                <th>Créé le</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+      </section>
+
+      <section class="sectionModifProd" id="sectionModifProd">
+        <form action="" method="" class="formContact" id="formModifProd">
+          <h4>Ajouter un produit</h4>
+          <div>
+          <div class="firstContact">
+            <input
+              type="text"
+              name="ProductName"
+              id="product_name"
+              class="inputText"
+              placeholder="Titre du produit"
+            />
+            <select class="selectAdd" name="ProductStatus" id="">
+              <option value="active" hidden>Statut</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+
+            <select
+              class="selectAdd"
+              name="ProductCategoryId"
+              id="selectCategoryProduct"
+            >
+              <option value="" hidden>Catégorie</option>
+            </select>
+
+            <textarea
+              class="textArea"
+              name="ProductDescription"
+              id="message"
+              placeholder="Description du produit..."
+            ></textarea>
+            <div class="buttonDiv"></div>
+
+            <button class="buttonForm" id="buttonAddProd">Ajouter</button>
+          </div>
+        </div>
+        </form>
+      </section>
+    </main>
 
     <footer>
       <div class="asa">
@@ -69,7 +129,7 @@
 
       <div class="decoLine"></div>
 
-      <p class="footerRights">Livret d'accueil. Tous droits réservés.</p>
+      <p class="footerRights">Ecommerce. Tous droits réservés.</p>
     </footer>
   </body>
 </html>
