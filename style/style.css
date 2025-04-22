@@ -705,6 +705,11 @@ footer {
 }
 
 /*--------------------------------------------------- Page 4 modifiers des produits ------------------------------------------------- */
+
+.hidden {
+  display: none !important;
+}
+
 .sectionFourthPage {
   height: fit-content;
   padding-bottom: 100px;
@@ -770,6 +775,33 @@ footer {
 
 .buttonModif:hover,
 .buttonDel:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #3c4cb0, #5564d8);
+}
+
+/* css pour le formulaire */
+.formModif {
+  padding-block: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 🔸 Légère ombre portée */
+}
+
+.reloadModifProd {
+  float: left;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding: 10px 25px;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, #4a5fc1, #667eea);
+}
+
+.reloadModifProd:hover {
   cursor: pointer;
   background: linear-gradient(90deg, #3c4cb0, #5564d8);
 }

@@ -32,62 +32,69 @@
 
     <main class="">
       <section class="sectionFourthPage" id="showModifProd">
-        <h3 class="modifyH3">Modifier des produits</h4>
-       
-          <table class="productTable" id="productTable">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Statut</th>
-                <th>Créé le</th>
-                <th>Catégorie</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+        <h3 class="modifyH3">Modifier des produits</h3>
+
+        <table class="productTable" id="productTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Statut</th>
+              <th>Créé le</th>
+              <th>Catégorie</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </section>
 
-      <section class="sectionModifProd" id="sectionModifProd">
+      <section class="sectionModifProd" id="sectionModifProd" hidden>
+        <button class="reloadModifProd" id="reloadModifProd">Revenir</button>
         <form action="" method="" class="formContact" id="formModifProd">
-          <h4>Ajouter un produit</h4>
-          <div>
-          <div class="firstContact">
-            <input
-              type="text"
-              name="ProductName"
-              id="product_name"
-              class="inputText"
-              placeholder="Titre du produit"
-            />
-            <select class="selectAdd" name="ProductStatus" id="">
-              <option value="active" hidden>Statut</option>
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
-            </select>
+          <h4>Modifier un produit</h4>
+          <div class="formModif">
+            <div class="firstContact">
+              <input
+                type="text"
+                name="ProductName"
+                id="productName"
+                class="inputText"
+                placeholder="Titre du produit"
+              />
 
-            <select
-              class="selectAdd"
-              name="ProductCategoryId"
-              id="selectCategoryProduct"
-            >
-              <option value="" hidden>Catégorie</option>
-            </select>
+              <select
+                class="selectAdd"
+                name="ProductStatus"
+                id="selectModifStatus"
+              >
+                <option value="active" hidden>Statut</option>
+                <option value="active" id="modifStatActive">Active</option>
+                <option value="inactive" id="modifStatInactive">
+                  Inactive
+                </option>
+              </select>
 
-            <textarea
-              class="textArea"
-              name="ProductDescription"
-              id="message"
-              placeholder="Description du produit..."
-            ></textarea>
-            <div class="buttonDiv"></div>
+              <select
+                class="selectAdd"
+                name="ProductCategoryId"
+                id="selectCategoryProduct"
+              >
+                <option value="" hidden>Catégorie</option>
+              </select>
 
-            <button class="buttonForm" id="buttonAddProd">Ajouter</button>
+              <textarea
+                class="textArea"
+                name="ProductDescription"
+                id="productDescription"
+                placeholder="Description du produit..."
+              ></textarea>
+              <div class="buttonDiv"></div>
+
+              <button class="buttonForm" id="buttonModifProd">Modifier</button>
+            </div>
           </div>
-        </div>
         </form>
       </section>
     </main>

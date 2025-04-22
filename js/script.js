@@ -48,10 +48,25 @@ if (window.location.pathname.includes("view/second.html")) {
 if (window.location.pathname.includes("view/fourth.html")) {
   let products;
   let categories;
-  let buttonModif;
-  let buttonDel;
 
+  let selectCategoryProduct = document.getElementById("selectCategoryProduct");
   let tbody = document.querySelector("#productTable tbody");
+
+  function showCategoriesModif(categories, product) {
+    categories.forEach((category) => {
+      if (category.categoryId == product.productCategoryId) {
+        selectCategoryProduct.insertAdjacentHTML(
+          "beforeend",
+          `<option value="${category.categoryId}" selected>${category.name}</option>`
+        );
+      } else {
+        selectCategoryProduct.insertAdjacentHTML(
+          "beforeend",
+          `<option value="${category.categoryId}" >${category.name}</option>`
+        );
+      }
+    });
+  }
 
   function showProductsMod(products, categories) {
     tbody.innerHTML = ""; // vide le tableau
@@ -81,9 +96,6 @@ if (window.location.pathname.includes("view/fourth.html")) {
       `;
 
       tbody.insertAdjacentHTML("beforeend", prodLine);
-
-      buttonModif = document.querySelector("buttonModif");
-      buttonDel = document.querySelector("buttonDel");
     });
   }
 
@@ -117,21 +129,77 @@ if (window.location.pathname.includes("view/fourth.html")) {
     if (e.target.tagName !== "BUTTON") {
       return;
     }
+
+    //recuperation de tous les buttons necessaires de la page
     let btn = e.target;
     let showModifProd = document.getElementById("showModifProd");
+    let sectionModifProd = document.getElementById("sectionModifProd");
+    let modifStatActive = document.getElementById("modifStatActive");
+    let modifStatInactive = document.getElementById("modifStatInactive");
+    let productDescription = document.getElementById("productDescription");
+    let productName = document.getElementById("productName");
+    let btnBack = document.getElementById("reloadModifProd");
+    let buttonModifProd = document.getElementById("buttonModifProd");
 
     switch (btn.className) {
       case "buttonModif":
-        console.log(showModifProd);
-        showModifProd.setAttribute("hidden", "");
-
-        console.log(btn.dataset.id + btn.className);
+        showModifProd.classList.add("hidden");
+        sectionModifProd.removeAttribute("hidden");
 
         products.forEach((product) => {
           if (product.productId == btn.dataset.id) {
             prodModif = product;
           }
         });
+
+        // on remplit les inputs avec les valeurs du produit à modifier
+        productName.setAttribute("value", prodModif.productName);
+        productDescription.value = prodModif.productDescription;
+
+        if (prodModif.productStatus == "active") {
+          modifStatActive.setAttribute("selected", "");
+        } else {
+          modifStatInactive.setAttribute("selected", "");
+        }
+
+        // on affiche la categorie du produit avec l'attribut selected
+        showCategoriesModif(categories, prodModif);
+
+        //button pour recharger la page
+        btnBack.addEventListener("click", (e) => {
+          window.location.reload();
+        });
+
+        buttonModifProd.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          let formModifProd = document.getElementById("formModifProd");
+
+          const formData = new FormData(formModifProd); // Récupère toutes les données du formulaire
+
+          let data = Object.fromEntries(formData.entries()); // Convertit en objet JS
+          data.ProductId = prodModif.productId;
+          console.log("🚀 ~ buttonModifProd.addEventListener ~ data:", data);
+
+          fetch("https://localhost:44384/product/modify", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then(async (resp) => {
+              if (!resp.ok) {
+                console.log("🚀 ~ .then ~ resp:", resp);
+                // throw new Error("erreur " + resp.statusText);
+              }
+              window.location.reload();
+            })
+            .catch(function (error) {
+              console.log("🚀 ~ error:", error);
+            });
+        });
+
         break;
 
       case "buttonDel":
